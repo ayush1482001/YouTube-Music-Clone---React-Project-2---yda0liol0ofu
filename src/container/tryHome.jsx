@@ -423,7 +423,7 @@ export default function TryHome() {
                 <DrawerHeader />
 
                 <Box className='home-container'>
-                    <Subnav />
+                    {/* <Subnav /> */}
 
 
                     <Home searchValue={searchValue} />
