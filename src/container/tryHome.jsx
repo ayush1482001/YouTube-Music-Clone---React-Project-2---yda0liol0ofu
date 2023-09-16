@@ -233,7 +233,7 @@ export default function TryHome() {
         <Box className="homeContainer">
             <CssBaseline />
             <AppBar position="fixed" open={open} sx={{ background: "black" }}>
-                <Toolbar>
+                <Toolbar >
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -247,7 +247,7 @@ export default function TryHome() {
                         <MenuIcon />
                     </IconButton>
 
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h6"  noWrap component="div">
                         {menuSt.current ? <img className="logosecond" src={ytlogo} alt="logo" /> : null}
                     </Typography>
                     <Search className='searchInput'
@@ -283,8 +283,8 @@ export default function TryHome() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader className='DrawerHead' >
+            <Drawer variant="permanent"  open={open}>
+                <DrawerHeader sx={{background:"red"}} className='DrawerHead' >
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon className='menuIcon' />
                     </IconButton>

@@ -55,6 +55,9 @@ background-color: rgb(0, 0, 0)!important;
   border-bottom: 2px solid grey;
   /* color: white !important; */
 }
+.DrawerHead{
+  background-color: rgb(0, 0, 0)!important;
+}
 
 
 
@@ -106,4 +109,7 @@ background-color: rgba(255, 255, 255, 0.36) !important;
 .drawer{
   background-color: green !important;
   box-shadow: 2px 2px 10px blue !important;
+}
+.pagination button{
+  color: red !important;
 }
