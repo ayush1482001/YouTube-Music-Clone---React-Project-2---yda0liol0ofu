@@ -1,0 +1,82 @@
+.singleplay {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(0, 255, 4); */
+}
+
+.singleplay .img1 {
+height: 80%;
+  position: relative;
+}
+.controls{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center; 
+    justify-content: center;
+    width: 30vw!important;
+}
+.details2{
+    max-width: 35%;
+    height: 100%;
+    display: flex;
+    gap: 1h;
+    width: 40vw;
+    align-items: end;
+    /* background-color: red; */
+    overflow: hidden;
+}
+.details2 h3{
+   
+    height: 60%;
+    text-wrap: nowrap;
+    /* background-color: rgb(0, 255, 30); */
+    overflow-x:hidden;
+}
+.img2{
+    margin-left: 1rem;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+}
+.img20{
+    margin-left: 1rem;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    animation: rotation 5s infinite linear;
+
+}
+
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.likes2{
+    width: 20vh;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.like:hover,.dislike:hover{
+    scale: 1.1;
+    transition:ease-in-out;
+    
+}
+.icon:hover{
+scale: 1.1;
+transition: ease-in-out;
+}
