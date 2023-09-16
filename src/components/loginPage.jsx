@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Alert from '@mui/material/Alert';
 import { TextField } from "@mui/material";
 import '../styles/form.css'
 import { useState } from "react";
@@ -18,6 +19,7 @@ import { useTheme } from '@mui/material/styles';
 const Login = () => {
   const [loginDetails,setLoginDetails]=useState({email:"",password:""});
   const [response,setResponse]=useState(null);
+  const[isOpen,setIsOpen]=useState(false);
   const navigate=useNavigate();
   const url='https://academics.newtonschool.co/api/v1/user/login';
 
@@ -27,8 +29,8 @@ const Login = () => {
     'Content-Type': 'application/json'
   };
   const body=JSON.stringify({
-    "email": "ayu@123mn.com",
-    "password": "7599",
+    "email": loginDetails.email,
+    "password": loginDetails.password,
     "appType": "music"
 })
 
@@ -66,7 +68,14 @@ const handleSubmit=(e)=>{
       setResponse(d);
       setOpen(true);
       localStorage.setItem("loginStatus",JSON.stringify(d));
-    });
+    }).catch(()=>{
+      // alert("user not found");
+      setIsOpen(true);
+      setTimeout(()=>{
+        setIsOpen(false);
+
+      },2000)
+    }) ;
     console.log("response is",response)
   }
   const [open, setOpen] = React.useState(false);
@@ -82,6 +91,7 @@ const handleSubmit=(e)=>{
     navigate('/');
 };
   return <>
+ 
   
   <Button className="back2" onClick={()=>{navigate('/')}} variant="outlined" startIcon={<KeyboardDoubleArrowLeftIcon />}>
 Home
@@ -126,6 +136,7 @@ Home
           </Button>
         </DialogActions>
       </Dialog>
+    <Alert sx={{position:'absolute',bottom:0,width:"30%", fontSize:'1.5rem' , display:isOpen ? 'block' : "none"}} severity="error">User not found</Alert>
     </div>
 
   </>
